@@ -13,17 +13,24 @@ import { CalculaDataComponent } from './calcula-data/calcula-data.component';
 import {CommonModule, DatePipe} from "@angular/common";
 import { registerLocaleData } from '@angular/common';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
-
 import ptBr from '@angular/common/locales/pt';
+import { CalculaIdadeComponent } from './calcula-idade/calcula-idade.component';
+import { CalculaMesesComponent } from './calcula-meses/calcula-meses.component';
+
+
+
 registerLocaleData(ptBr)
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalculaDataComponent
+    CalculaDataComponent,
+    CalculaIdadeComponent,
+    CalculaMesesComponent
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -36,9 +43,7 @@ registerLocaleData(ptBr)
     ReactiveFormsModule,
     CommonModule,
     DatePipe,
-    WjInputModule
-
-
+    WjInputModule,
   ],
   providers: [DatePipe, {provide: LOCALE_ID, useValue: 'pt-PT' }],
   bootstrap: [AppComponent]

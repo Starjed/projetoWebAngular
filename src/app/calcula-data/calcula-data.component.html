@@ -4,27 +4,22 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-md">
-    <a class="navbar-brand" href="#">CALCULDO DE DIAS</a>
-    <a class="navbar-brand" href="#">CALCULO DE MESES</a>
-    <a class="navbar-brand" href="#"> CALCULO DE ANOS</a>
-    <a class="navbar-brand" href="#">CALCULO DE IDADE</a>
+    <a class="navbar-brand" href="calculaData">CALCULDO DE DIAS</a>
+    <a class="navbar-brand" href="calculaMes">CALCULO DE MESES</a>
+    <a class="navbar-brand" href="calculaIdade">CALCULO DE IDADE</a>
   </div>
 
 </nav>
 
+<div class = container>
 
 <mat-form-field [formGroup]="form">
 
-  <input formControlName="pegaData" [textMask]="mask" [(ngModel)]="pegaData" matInput [matDatepicker]="picker" placeholder="Escolha uma data">
+  <input formControlName="pegaData"  [(ngModel)]="pegaData" matInput [matDatepicker]="picker" placeholder="Escolha uma data">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 
 <button mat-raised-button color="primary" class="apertaAqui" (click)="calculaData()">Calcula a Data</button>
 
-<div>
-  {{myDate | date : 'dd/MM/yyyy' }}
 </div>
-
-
-
