@@ -1,17 +1,25 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-md">
-    <a class="navbar-brand" href="calculaData" >CALCULDO DE DIAS</a>
+    <a class="navbar-brand" href="calculaData">CALCULDO DE DIAS</a>
     <a class="navbar-brand" href="calculaMeses">CALCULO DE MESES</a>
-    <a class="navbar-brand" href="calculaIdade" >CALCULO DE IDADE</a>
+    <a class="navbar-brand" href="calculaIdade">CALCULO DE IDADE</a>
   </div>
 
 </nav>
 
+<div class = container>
 
-<p>calcula-idade works!</p>
+  <mat-form-field [formGroup]="form">
 
+    <input formControlName="pegaData"  [(ngModel)]="pegaData" matInput [matDatepicker]="picker" placeholder="Escolha uma data">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="apertaAqui" (click)="calculaData()">Calcula a Data</button>
+
+</div>
 
